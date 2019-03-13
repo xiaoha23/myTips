@@ -32,7 +32,4 @@ done
 **It runs jar package with the parameters
 
 
-Other tips
-
-
-
+more tips
