@@ -1,0 +1,32 @@
+bash date tips
+date +"%D"	-->	02/24/17
+date +"%Y%m%d"	-->	20170224
+date -d "20170228 + 1 day"	-->	Wed Mar  1 00:00:00 AST 2017
+date -d "20170228 + 1 day" +"%Y%m%d"	-->	20170301
+date -d "20170201 - 1 day" +"%Y%m%d"	-->	20170131
+date -d "20170601" +"%b"	-->		Jun
+date -d "20170601 - 10 days" +"%b" 	-->	May
+date -d@36 -u +%H:%M:%S	-->	00:00:36
+date -d@1036 -u +%H:%M:%S	-->	00:17:16
+date -d@12345 -u +%H:%M:%S	-->	03:25:45
+
+Convert UTC time to local 
+date -d '2017/03/08 17:00 UTC'	-->	Wed Mar  8 13:00:00 AST 2017
+date -d '2017/03/18 17:00 UTC'	-->	Sat Mar 18 14:00:00 ADT 2017
+
+Convert UTC to another time zone
+TZ='Canada/Eastern' date -d '20170318 15:18:09 UTC'	-->	Sat Mar 18 11:18:09 EDT 2017
+TZ='Canada/Atlantic' date -d '20170318 15:17:21 UTC'	-->	Sat Mar 18 12:17:21 ADT 2017
+TZ='Canada/Eastern' date -d '20170318 15:18:09 UTC' +%s	-->	1489850289
+TZ='Canada/Eastern' date -d '20170318 15:18:09 UTC' +"%Y %m %d %H %M %S"	-->	2017 03 18 11 18 09
+
+bash loop
+
+let START=0
+let ADDS=10
+for (( i=0; i<=$ADDS; i++ ))
+do
+        DAYS=$(( START+i ))
+        java -jar jarPackageName.jar parameter1 parameter2 ...
+done
+**It runs jar package with the parameters
