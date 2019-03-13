@@ -30,3 +30,9 @@ do
         java -jar jarPackageName.jar parameter1 parameter2 ...
 done
 **It runs jar package with the parameters
+
+
+Other tips
+
+
+
